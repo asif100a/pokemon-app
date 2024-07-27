@@ -14,7 +14,7 @@ const PokemonApp = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(`https://pokeapi.co/api/v2/pokemon/`);
+            const { data } = await axios('https://pokeapi.co/api/v2/pokemon/');
             setPokemonData(data.results);
         };
 
@@ -22,7 +22,7 @@ const PokemonApp = () => {
     }, [searchText]);
 
     const filteredData = pokemonData?.filter(data => (
-        data.name.toLowerCase().includes(searchText.toLowerCase()
+        data?.name.toLowerCase().includes(searchText.toLowerCase()
         )
     ));
 
